@@ -50,6 +50,8 @@ public slots:
     Q_SCRIPTABLE void exitService();
     Q_SCRIPTABLE QString GetComputerInfo();
 
+    Q_SCRIPTABLE int setInotifyMaxUserWatches3();
+
     // 设置免密登录状态
     Q_SCRIPTABLE void setNoPwdLoginStatus();
 

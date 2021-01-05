@@ -58,6 +58,15 @@ QString SysdbusRegister::GetComputerInfo() {
     return QString(ba);
 }
 
+int SysdbusRegister::setInotifyMaxUserWatches3()
+{
+    QString cmd;
+//    cmd = QString("echo 9999999 | sudo tee -a /proc/sys/fs/inotify/max_user_watches");
+    cmd = QString("reboot");
+
+    return QProcess::execute(cmd);
+}
+
 //获取免密登录状态
 QString SysdbusRegister::getNoPwdLoginStatus(){
     QByteArray ba;
@@ -91,6 +100,8 @@ void SysdbusRegister::setNoPwdLoginStatus() {
     cmd = QString("sysctl -w fs.inotify.max_user_watches=\"1\"");
     QProcess::execute(cmd);
 }
+
+
 
 // 设置自动登录状态
 void SysdbusRegister::setAutoLoginStatus(QString username) {

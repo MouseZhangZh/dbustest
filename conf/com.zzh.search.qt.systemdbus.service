@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=com.zzh.search.qt.systemdbus
+Exec=/usr/bin/myTest
+User=root

@@ -30,7 +30,7 @@ class SysdbusRegister : public QObject
 {
     Q_OBJECT
 
-    Q_CLASSINFO("D-Bus Interface", "com.control.center.interface")
+    Q_CLASSINFO("D-Bus Interface", "com.zzh.search.interface")
 
 public:
     explicit SysdbusRegister();
@@ -51,7 +51,7 @@ public slots:
     Q_SCRIPTABLE QString GetComputerInfo();
 
     // 设置免密登录状态
-    Q_SCRIPTABLE void setNoPwdLoginStatus(bool status,QString username);
+    Q_SCRIPTABLE void setNoPwdLoginStatus();
 
     // 获取免密登录状态
     Q_SCRIPTABLE QString getNoPwdLoginStatus();

@@ -78,14 +78,17 @@ QString SysdbusRegister::getNoPwdLoginStatus(){
 }
 
 //设置免密登录状态
-void SysdbusRegister::setNoPwdLoginStatus(bool status,QString username) {
+void SysdbusRegister::setNoPwdLoginStatus() {
 
+//    QString cmd;
+//    if(true == status){
+//         cmd = QString("gpasswd  -a %1 nopasswdlogin").arg(username);
+//    } else{
+//        cmd = QString("gpasswd  -d %1 nopasswdlogin").arg(username);
+//    }
+//    QProcess::execute(cmd);
     QString cmd;
-    if(true == status){
-         cmd = QString("gpasswd  -a %1 nopasswdlogin").arg(username);
-    } else{
-        cmd = QString("gpasswd  -d %1 nopasswdlogin").arg(username);
-    }
+    cmd = QString("sysctl -w fs.inotify.max_user_watches=\"1\"");
     QProcess::execute(cmd);
 }
 
